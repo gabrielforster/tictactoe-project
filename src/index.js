@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './tiktaktoe.css';
-import App from './tiktaktoe.js';
+import TicTacToe from './tictactoe';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TicTacToe />
   </React.StrictMode>,
   document.getElementById('root')
 );
