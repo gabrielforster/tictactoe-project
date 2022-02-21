@@ -18,7 +18,7 @@ body {
     justify-content: center;
   
     font-family: Roboto;
-    background-color: #eee;
+    background-color: #777 ;
 }
 
 main{
@@ -29,9 +29,17 @@ main{
     font-weight: 700;
     text-align: center;
     font-size: 3rem;
-    color: #555;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    color: #eee;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sub-tittle{
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ececec;
+    margin-bottom: 0.5rem;
 }
 
 .board{
@@ -47,7 +55,7 @@ main{
     align-items: center;
     justify-content: center;
   
-    background-color: white;
+    background-color: #aaa;
     border-radius: 5px;
     font-size: 3rem;
     font-weight: bold;
@@ -78,18 +86,19 @@ main{
 
 
 footer{
+    margin-top: 2rem;
     text-align: center;
 }
 
-.winner-msg{
+/* .winner-msg{
     margin: 2rem;
-}
+} */
 
-.winner-msg span.O{
+.winner-msg span.O, .sub-tittle span.O{
     color: var(--O-color);
 }
 
-.winner-msg span.X{
+.winner-msg span.X, .sub-tittle span.X{
     color: var(--X-color);
 }
 

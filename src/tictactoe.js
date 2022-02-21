@@ -58,6 +58,25 @@ function TicTacToe() {
   return (
     <main>
       <h1 className='tittle'>Jogo da velha !</h1>
+      {winner === null ?
+        <div className="sub-tittle">
+          <h2>Vez de <span className={actualPlayer}>{actualPlayer}</span>
+          </h2>
+        </div>
+        :
+        <div className="sub-tittle">
+          {winner === "D" ?
+          <h2 className='winner-msg'>
+            <span className={winner}>Empatou !</span>
+          </h2>
+          :
+          <h2 className='winner-msg'>
+            <span className={winner}>{winner} </span>
+            venceu !
+          </h2>
+          }
+        </div>
+      }
 
       <div className={`board ${winner ? "game-over" : " "}`}>
         {board.map((item, index) => (
@@ -70,21 +89,12 @@ function TicTacToe() {
           </div>
         ))}
       </div>
-      {winner &&
-        <footer>
-          {winner === "D" ?
-          <h2 className='winner-msg'>
-            <span className={winner}>Empatou!</span>
-          </h2>
-          :
-          <h2 className='winner-msg'>
-            <span className={winner}>{winner} </span>
-            venceu!
-          </h2>
-          } 
-          <button onClick={reset}>Recomeçar o jogo!</button>
-        </footer>
-      }
+      
+      <footer>
+        <button button onClick={reset}>Recomeçar o jogo!</button>
+      </footer>
+
+
     </main>
   );
 }
