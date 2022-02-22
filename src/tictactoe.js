@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './main.css'
 
 function TicTacToe() {
+  
 
   const emptyGameBoard = Array(9).fill("");
 
@@ -21,6 +22,8 @@ function TicTacToe() {
       winnerCheck()
   }
 
+ 
+
   const winnerCheck = () => {
     const possibleWin = [
       //horizontal wins
@@ -39,21 +42,29 @@ function TicTacToe() {
     ];
 
     possibleWin.forEach(cells => {
+      // if (cells.every(cell => cell === "X")) setWinner("X")
+      // if (cells.every(cell => cell === "O")) setWinner("O")
+      // if(winner === false){
+      //   if (board.every(cell => cell !== "" && winner === false)) setWinner("D")
+      // }
       if (cells.every(cell => cell === "X")) setWinner("X")
       if (cells.every(cell => cell === "O")) setWinner("O")
-      if (board.every(item => item !== "")) setWinner("D")
-    })
-
+    });
+      drawCheck()
   }
-  
-  useEffect(winnerCheck, [board]);
+
+  const drawCheck = () => {
+      if (board.every(cell => cell !== '')) setWinner("D")
+    }
 
   const reset = () =>{
-    setActualPlayer("X")
+    setActualPlayer(actualPlayer === "X" ? "O" : "X")
     setBoard(emptyGameBoard)
     setWinner(null)
     
   }
+
+  useEffect(winnerCheck, [board]);
 
   return (
     <main>
