@@ -3,7 +3,7 @@
 :root{
     --O-color: #2196f3;
     --X-color: #e61c59;
-    --D-color: #777
+    --D-color: #ffbf00
 }
 
 * {
@@ -39,7 +39,7 @@ main{
     text-align: center;
     font-size: 1.2rem;
     color: #ececec;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .board{
