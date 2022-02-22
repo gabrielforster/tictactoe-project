@@ -64,6 +64,7 @@ function TicTacToe() {
     
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(winnerCheck, [board]);
 
   return (
