@@ -93,8 +93,6 @@ function TicTacToe() {
       <footer>
         <button button onClick={reset}>Recomeçar o jogo!</button>
       </footer>
-
-
     </main>
   );
 }
