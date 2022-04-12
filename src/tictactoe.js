@@ -3,10 +3,9 @@ import './main.css'
 
 function TicTacToe() {
   
+  const emptyBoard = Array(9).fill('');
 
-  const emptyGameBoard = Array(9).fill("");
-
-  const[board, setBoard] = useState(emptyGameBoard);
+  const[board, setBoard] = useState(emptyBoard);
   const[actualPlayer, setActualPlayer] = useState("X")
   const[winner, setWinner] = useState(null);
 
@@ -15,14 +14,14 @@ function TicTacToe() {
     if(board[index]!==""){return null};
 
     setBoard(
-      board.map((item, itemIndex) => itemIndex === index ? actualPlayer : item));
+      board.map((item, itemIndex) => itemIndex === index
+      ? actualPlayer
+      : item));
 
       setActualPlayer(actualPlayer === "X" ? "O" : "X")
   
       winnerCheck()
   }
-
- 
 
   const winnerCheck = () => {
     const possibleWin = [
@@ -42,24 +41,20 @@ function TicTacToe() {
     ];
 
     possibleWin.forEach(cells => {
-      // if (cells.every(cell => cell === "X")) setWinner("X")
-      // if (cells.every(cell => cell === "O")) setWinner("O")
-      // if(winner === false){
-      //   if (board.every(cell => cell !== "" && winner === false)) setWinner("D")
-      // }
       if (cells.every(cell => cell === "X")) setWinner("X")
-      if (cells.every(cell => cell === "O")) setWinner("O")
+      if (cells.every(cell => cell ==="O")) setWinner("O")
     });
       drawCheck()
   }
 
   const drawCheck = () => {
-      if (board.every(cell => cell !== '')) setWinner("D")
+      if(winner !== null) setWinner('D')
+      if (board.every(cell => cell !== '')) setWinner('D')
     }
 
   const reset = () =>{
     setActualPlayer(actualPlayer === "X" ? "O" : "X")
-    setBoard(emptyGameBoard)
+    setBoard(emptyBoard)
     setWinner(null)
     
   }
